@@ -1,5 +1,3 @@
-File Upload
-
 ## Instalación Entorno de Desarrollo 
 
 Crear el entorno Virtual de Pyhton
