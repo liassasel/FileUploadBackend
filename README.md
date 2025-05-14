@@ -1,59 +1,26 @@
-## Instalación Entorno de Desarrollo 
+# FileUploadBackend
 
-Crear el entorno Virtual de Pyhton
+## Descripción del Proyecto
+
+Este proyecto es la API backend (desarrollada con Django) para una aplicación de gestión y subida de archivos. Se encarga de manejar las operaciones de recepción, almacenamiento y gestión de archivos a través de endpoints HTTP.
+
+## Requisitos Previos
+
+Asegúrate de tener instalado lo siguiente en tu sistema antes de configurar y ejecutar el proyecto:
+
+* **Python 3.x** (Versión recomendada: 3.8 o superior)
+* **pip** (El gestor de paquetes de Python, generalmente incluido con Python moderno)
+* **Git** (Para clonar el código fuente del repositorio)
+* **PostgreSQL** (Este proyecto utiliza PostgreSQL como base de datos. Necesitarás tener una instancia de PostgreSQL corriendo localmente o accesible, junto con un usuario y base de datos creados para este proyecto).
+
+## Configuración del Entorno de Desarrollo
+
+Sigue estos pasos detallados para poner en marcha el backend en tu máquina local.
+
+### 1. Clonar el Repositorio
+
+Abre tu terminal, navega al directorio donde deseas clonar el proyecto y ejecuta el siguiente comando:
 
 ```bash
-  python -m venv venv
-```
-
-Activar entorno Virtual de Pyhton
-
-```bash
-  venv\Scripts\activate  ó Activar mediante selecionar interprete de Visual Studio
-```
-   
-
-Instalar Dependencias del Proyecto
-
-```bash
-  pip install -r requirements.txt
-```
-
-
-## Variables de Entorno
-
-Para la correcta conexión con la base de dato y el adecuado funcionamiento del proyecto es obligatorio crear y rellenar el archivo .env en la carpeta principal (core) con las siguientes variables de entorno (La base de datos utilizada es postgresql)
-
-`DB_NAME`
-
-`DB_USER`
-
-`DB_PASSWORD`
-
-`DB_HOST`
-
-`DB_PORT`
-
-`FRONT_URL`
-
-## Migración y Ejecución del Proyecto
-
-Como último paso, es necesario migrar la base de datos para así poder ejecutar el proyecto sin problemas 
-
-Migración:
-```bash
-  python manage.py migrate
-```
-
-Ejecución
-```bash
-  python manage.py runserver
-```
-
-## Guardar nuevas dependencias creadas
-
-Es importante que sí agregamos dependencias al proyecto, antes de subir los cambios ejecutemos el siguiente comando
-```bash
-  pip freeze > requirements.txt  
-```
-Esto Actualizará el archivo de requerimientos utilizado anteriormente 
+git clone [https://github.com/liassasel/FileUploadBackend.git](https://github.com/liassasel/FileUploadBackend.git)
+cd FileUploadBackend # Entra al directorio raíz del proyecto clonado
