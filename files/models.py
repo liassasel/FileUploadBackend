@@ -21,6 +21,11 @@ class UploadedFile(models.Model):
         self.file_size = self.file.size
         super().save(*args, **kwargs)
         
+    def delete(self, *args, **kwargs):
+        if self.file:
+            self.file.delete(save=False)
+        super().delete(*args, **kwargs)
+        
     
     def __str__(self):
         return f"{self.original_name} ({self.file_size} bytes)"

@@ -18,13 +18,14 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from files.views import FileUploadView, FileListView, FileDownloadView
+from files.views import FileUploadView, FileListView, FileDownloadView, FileDeleteView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/upload/', FileUploadView.as_view(), name='file-upload'),
     path('api/files/', FileListView.as_view(), name='file-list'),
     path('api/download/<int:file_id>/', FileDownloadView.as_view(), name='file-download'),
+    path('api/files/<int:file_id>/', FileDeleteView.as_view(), name='file-delete'),
 ]
 
 if settings.DEBUG:

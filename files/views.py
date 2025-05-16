@@ -36,3 +36,18 @@ class FileDownloadView(APIView):
             return FileResponse(uploaded_file.file.open(), filename=uploaded_file.original_name)
         except UploadedFile.DoesNotExist:
             return Response({'error': 'File not found'}, status=status.HTTP_404_NOT_FOUND)
+        
+class FileDeleteView(APIView):
+    def delete(self, request, file_id):
+        try:
+            file = UploadedFile.objects.get(id=file_id)
+            
+            file.delete()
+            
+            return Response(status=status.HTTP_204_NO_CONTENT)
+            
+        except UploadedFile.DoesNotExist:
+            return Response(
+                {"error": "File not found"}, 
+                status=status.HTTP_404_NOT_FOUND
+            )
